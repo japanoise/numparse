@@ -1,4 +1,4 @@
 # numparse
 
-Parses numbers.
+Parses numbers. [Documentation here.](https://godoc.org/github.com/japanoise/numparse)
 
