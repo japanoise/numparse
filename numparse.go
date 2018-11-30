@@ -21,18 +21,20 @@ func UNumParse(num string) (uint64, error) {
 func BasePrefix(num string) (string, int) {
 	if strings.HasPrefix(num, "0x") {
 		return strings.TrimPrefix(num, "0x"), 16
+	} else if strings.HasPrefix(num, "0o") {
+		return strings.TrimPrefix(num, "0o"), 8
+	} else if strings.HasPrefix(num, "0b") {
+		return strings.TrimPrefix(num, "0b"), 2
+	} else if strings.HasPrefix(num, "&h") {
+		return strings.TrimPrefix(num, "&h"), 16
 	} else if strings.HasPrefix(num, "$") {
 		return strings.TrimPrefix(num, "$"), 16
 	} else if strings.HasPrefix(num, "#") {
 		return strings.TrimPrefix(num, "#"), 16
-	} else if strings.HasPrefix(num, "0o") {
-		return strings.TrimPrefix(num, "0o"), 8
 	} else if strings.HasPrefix(num, "&") {
 		return strings.TrimPrefix(num, "&"), 8
 	} else if strings.HasPrefix(num, "0") {
 		return strings.TrimPrefix(num, "0"), 8
-	} else if strings.HasPrefix(num, "0b") {
-		return strings.TrimPrefix(num, "0b"), 2
 	} else if strings.HasPrefix(num, "%") {
 		return strings.TrimPrefix(num, "%"), 2
 	}
